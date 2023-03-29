@@ -7,7 +7,7 @@ function widthChangeCallback(myMediaQuery) {
     mobile.classList.add("display");
     computer.classList.remove("display");
     setTimeout(() => {
-      window.location.href = "/computer/html/startPageC.html";
+      // window.location.href = "/computer/html/startPageC.html";
     }, 100);
    } else {
     mobile.classList.remove("display");
@@ -19,7 +19,3 @@ function widthChangeCallback(myMediaQuery) {
 }
 myMediaQuery.addEventListener('change', widthChangeCallback);
 widthChangeCallback(myMediaQuery);
-// setTimeout(() => {
-  
-//   window.location.href = "/Mobile/html/startPage.html";
-// }, 15000);
