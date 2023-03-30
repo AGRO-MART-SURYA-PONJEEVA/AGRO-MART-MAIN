@@ -17,6 +17,8 @@ const login=document.querySelector('.login');
 let check=0;
 let check1=0;
 let check2=0;
+let check3=0;
+
 let usernum=[];
 languageSelector.addEventListener("click",function(e){
     const clicked=e.target.closest(".box");
@@ -56,7 +58,12 @@ languageSelector.addEventListener("click",function(e){
         btnDesign.style.borderColor="#c2c2c2";
         check=0;
     }
-    
+    if(check===0)
+    {
+        setTimeout(() => {
+            errorMessage.classList.add('display');
+          }, 3000);
+    }
 });
 btnDesign.addEventListener('click',function(){
     if(check>0){
@@ -100,12 +107,11 @@ btnDesign.addEventListener('click',function(){
 });
 register.addEventListener('click',function()
 {
-    check2=1;
+    check2=1; 
     localStorage.setItem("send1", check2);
-    
 });
 login.addEventListener('click',function()
-{
-    check2=2;
-    localStorage.setItem("send3", check2);
+{ 
+   check2=2;
+   localStorage.setItem("send1", check2);
 });
