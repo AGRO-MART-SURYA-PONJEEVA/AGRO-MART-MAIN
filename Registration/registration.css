@@ -1,0 +1,114 @@
+@media only screen and (max-width: 915px) {
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .display{
+        display: none;
+    }
+    .header{
+        position: relative;
+        /* border: 3px solid; */
+        width: 100%;
+        height: 60px;
+        background-color: #2873f0;
+        padding: 5px;
+    }
+    .header_title
+    {
+        text-align: center;
+        font-size: 30px;
+        color:black;
+        font-family: "Poppins", sans-serif;
+        font-weight: bolder;
+    }
+    .registration_1{
+        position: absolute;
+        /* border: 3px solid; */
+        width: 100%;
+        height: 94vh;
+        background-color: #feffff;
+        top: 40px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .note{
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    .span{
+        font-weight: bolder;
+    }
+    .form_container,.form_container_2{
+        border:  3px solid #2873f0;
+        width: 90%;
+        margin-left: 20px;
+        margin-top: 30px;
+        padding: 25px;
+    }
+    .mobile
+    {
+        font-size: 16px;
+    }
+    .input{
+        width: 90%;
+        height: 30px;
+        margin-top: 14px;
+        font-size: 20px;
+    }
+    .next_page
+    {
+        position: absolute;
+        margin-top: 40px;
+        width: 100px;
+        height: 30px;
+        right: 18px;
+    }
+    .footer{
+        position: absolute;
+        bottom: 30px;
+      
+        font-family: "Delicious Handrawn", cursive;
+        font-weight: bolder;
+        margin-left: 35%;
+    }
+    /* 2 */
+    .form_container_2{
+        padding: 15px;
+    }
+.location_container
+{
+    display: flex;
+}
+    .pincode
+    {
+      
+        width: 65%;
+        height: 30px;
+        margin-top: 3px;
+    }
+    .location{
+        /* border: 3px solid; */
+        width: 70%;
+        height: 30px;
+        margin-top: 23px;
+        padding: 5px;
+        text-align: center;
+        background-color: #2873f0;
+        color: white;
+    }
+    .address_btn{
+        border: 2px solid;
+        margin-top: 10px;
+        width: 80px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #f3f9fe;
+    }
+}
