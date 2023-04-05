@@ -119,13 +119,17 @@
     height: 50px;
     font-size: 25px;
   }
+  .id_label
+  {
+    position: relative;
+  }
   .input_up{
     position: absolute;
     /* border: 3px solid; */
     width: 65px;
     height: 20px;
     background-color: #feffff;
-    top: 16%;
+    top: 15px;
     margin-left: 50px;
     color: #2973ef;
     font-weight: 600;
