@@ -3,6 +3,7 @@ const languageSelector = document.querySelector(".language_selector");
 const conBtn = document.querySelector(".con");
 const heading = document.querySelector(".heading");
 const lanBoxContainer = document.querySelectorAll(".box");
+const headingBox = document.querySelector(".language_container");
 let a = 0;
 languageSelector.addEventListener("click", function (e) {
   a++;
@@ -24,5 +25,6 @@ conBtn.addEventListener("click", function (e) {
     languageSelector.classList.add("display");
     heading.textContent="Agro Mart";
     heading.style.textAlign="center";
+    headingBox.style.width="100%";
   }
 });
