@@ -1,6 +1,6 @@
 @media only screen and (max-width: 915px) {
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
 
   * {
     margin: 0;
@@ -19,11 +19,10 @@
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 18px;
-    
   }
-  .language_selector{
+  .language_selector {
     border-bottom: 2px solid #c2c2c2;
-    height: 82vh;
+    height: 91vh;
   }
   .heading {
     font-family: "Poppins", sans-serif;
@@ -62,7 +61,7 @@
   }
   .con {
     position: absolute;
-    border: 5px solid #c2c2c2;
+    border: 2px solid #c2c2c2;
     width: 90%;
     height: 40px;
     background-color: #c2c2c2;
@@ -72,33 +71,87 @@
     font-family: "Poppins", sans-serif;
     color: white;
   }
-/* 2 */
+  /* 2 */
 
-.heading_login{
-  /* border: 3px solid; */
-  width: 100%;
-  height: 60px;
-  background-color: #2873f0;
-  padding-top: 5px;
-}
-.logo_heading
-{
- text-align: center;
- font-size: 25px;
- color: white;
- font-family: 'Delicious Handrawn', cursive;
- font-weight: bolder;
-}
-.login_details{
-  position: absolute;
-  top: 45px;
-  /* border: 3px solid; */
-  width: 100%;
-  height: 86vh;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom: 3px solid #c2c2c2;
-  background-color: #feffff;
-}
+  .heading_login {
+    /* border: 3px solid; */
+    width: 100%;
+    height: 60px;
+    background-color: #2873f0;
+    padding-top: 5px;
+  }
+  .logo_heading {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-family: "Delicious Handrawn", cursive;
+    font-weight: bolder;
+  }
+  .login_details {
+    position: absolute;
+    top: 45px;
+    /* border: 3px solid; */
+    width: 100%;
+    height: 86vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 3px solid #c2c2c2;
+    background-color: #feffff;
+  }
+  .title_login {
+    font-family: "Poppins", sans-serif;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-weight: bolder;
+  }
+  .title_login_method {
+    font-family: "Poppins", sans-serif;
+    margin-left: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .input{
+    /* position: relative; */
+    margin-left: 20px;
+    margin-top: 25px;
+    border: 2px solid #2873f0;
+    width: 90%;
+    height: 50px;
+    font-size: 25px;
+  }
+  .input_up{
+    position: absolute;
+    /* border: 3px solid; */
+    width: 65px;
+    height: 20px;
+    background-color: #feffff;
+    top: 16%;
+    margin-left: 50px;
+    color: #2973ef;
+    font-weight: 600;
 
+  }
+  .create_link{
+    font-family: "Poppins", sans-serif;
+    display: block;
+    margin-left: 55%;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #4f80d9;
+    font-weight: 500;
+  }
+  .copywrite{
+    font-family: "Poppins", sans-serif;
+    /* border: 3px solid; */
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: 5px;
+  }
+  .copyspan{
+    color: #2973ef;
+    font-weight: bold;
+  }
 }

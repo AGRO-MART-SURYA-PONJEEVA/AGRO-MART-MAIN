@@ -3,7 +3,7 @@ const languageSelector = document.querySelector(".language_selector");
 const conBtn = document.querySelector(".con");
 const heading = document.querySelector(".heading");
 const lanBoxContainer = document.querySelectorAll(".box");
-const headingBox = document.querySelector(".language_container");
+const loginPage=document.querySelector('.login_page');
 let a = 0;
 languageSelector.addEventListener("click", function (e) {
   a++;
@@ -23,8 +23,8 @@ conBtn.addEventListener("click", function (e) {
   e.preventDefault();
   if (a > 0) {
     languageSelector.classList.add("display");
+    loginPage.classList.remove("display");
     heading.textContent="Agro Mart";
     heading.style.textAlign="center";
-    headingBox.style.width="100%";
   }
 });
