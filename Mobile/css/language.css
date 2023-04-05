@@ -14,10 +14,11 @@
     width: 90%;
     height: 60px;
     background-color: rgb(33, 98, 202);
-    padding: 20px;
+    padding: 18px;
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 18px;
+    
   }
   .heading {
     font-family: "Poppins", sans-serif;
@@ -27,7 +28,7 @@
   }
   .box {
     display: flex;
-    border: 5px solid #dedede;
+    border: 3px solid #dedede;
     width: 90%;
     height: 70px;
     margin-top: 20px;
@@ -46,11 +47,12 @@
     margin-left: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
-    margin-top: 2px;
+    margin-top: 10px;
+    font-size: 14px;
   }
   .lan_en {
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
   }
   .con {
@@ -66,4 +68,5 @@
     font-family: "Poppins", sans-serif;
     color: white;
   }
+
 }
