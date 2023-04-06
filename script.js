@@ -7,14 +7,14 @@ function widthChangeCallback(myMediaQuery) {
     mobile.classList.add("display");
     computer.classList.remove("display");
     setTimeout(() => {
-      // window.location.href = "/computer/html/startPageC.html";
+      window.location.href = "/computer/html/startPageC.html";
     }, 100);
    } else {
     mobile.classList.remove("display");
     computer.classList.add("display");
     setTimeout(() => {
       window.location.href = "/Mobile/html/startPageM.html";
-    }, 15000);
+    }, 10000);
    }
 }
 myMediaQuery.addEventListener('change', widthChangeCallback);
