@@ -51,7 +51,7 @@
     width: 90%;
     margin-left: 20px;
     margin-top: 30px;
-    padding: 24px;
+    padding: 22px;
   }
   .mobile {
     font-size: 16px;
@@ -60,7 +60,7 @@
     width: 90%;
     height: 30px;
     margin-top: 14px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .next_page {
     position: absolute;
@@ -79,7 +79,7 @@
   }
   /* 2 */
   .form_container_2 {
-    padding: 15px;
+    padding: 14px;
   }
   .location_container {
     display: flex;
@@ -93,20 +93,32 @@
     /* border: 3px solid; */
     width: 70%;
     height: 30px;
-    margin-top: 23px;
+    margin-top: 20px;
     padding-top: 5px;
     text-align: center;
     background-color: #2873f0;
     color: white;
   }
+  .btn {
+    /* border: 3px solid; */
+    width: 80%;
+    height: 60px;
+    display: flex;
+  }
   .address_btn {
+    /* position: absolute; */
     border: 2px solid #dddddd;
     margin-top: 10px;
-    width: 110px;
+    width: 100px;
     height: 40px;
     border-radius: 50px;
     background-color: #f3f9fe;
     font-size: 16px;
+    padding: 10px;
+    text-align: center;
+  }
+  .work {
+    margin-left: 20px;
   }
   .address_type {
     color: #a8a8a8;
@@ -144,7 +156,7 @@
 
   .box_id {
     border: 3px solid;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     margin-left: 50px;
     width: 270px;
     height: 50px;
@@ -166,18 +178,16 @@
   }
   .id_text {
     font-family: "Poppins", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     padding-top: 7px;
     color: #a8a8a8;
   }
 
-  .error_message ,.error_message_1{
+  .error_message,
+  .error_message_1 {
     font-size: 14px;
     margin-top: 7px;
     color: red;
   }
-  /* .error_message_1{
-    margin-top: 155px;
-  } */
 }
