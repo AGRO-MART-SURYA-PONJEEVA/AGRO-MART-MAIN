@@ -1,71 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-    <link rel="stylesheet" href="/Registration/registration.css">
+    <link rel="stylesheet" href="/Registration/registration.css" />
 
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-  />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="header">
-        <h1 class="header_title">Registration</h1>
+      <h1 class="header_title">Registration</h1>
     </div>
     <div class="registration_1">
-     <p class="note"><span class="span">Note:</span>Check all the details before Submit</p>
+      <p class="note">
+        <span class="span">
+          <i class="fa-solid fa-circle-exclamation"></i> Note:</span
+        >Check all the details before Submit
+      </p>
 
-     <fieldset class="form_container">
-        <legend>Personal Details</legend>
+      <fieldset class="form_container">
+        <legend>
+          <strong> <i class="fa-regular fa-user"></i> Personal Details </strong>
+        </legend>
         <form action="">
-            <label for=""><span class="span">Name: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input fullname" name="fullname" required> <br> <br>
-            <label for=""><span class="span">Email:</span></label> <br>
-            <input type="email" class="input email" name="email"> <br><br>
-            <label for=""><span class="span">Mobile Number: <span style="color: red;">*</span></span></label> <br> <br>
-            <input type="tel" class="input mobile" name="mobile"> <br> <br>
-            <label for=""><span class="span">Password: <span style="color: red;">*</span></span></label> <br>
-            <input type="password" class="input password" name="password"> <br> <br>
-            <label for=""><span class="span">Confirm Password: <span style="color: red;">*</span></span></label> <br>
-            <input type="password" class="input conpassword" name="conpassword"> <br> <br>
+          <label for="">
+            <i class="fa-solid fa-user"></i>
+            <span class="span"
+              >Name: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="text" class="input fullname" name="fullname" />
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="span">Email:</span></label
+          >
+          <br />
+          <input type="email" class="input email" name="email" /> <br /><br />
+          <label for="">
+            <i class="fa-solid fa-mobile"></i>
+            <span class="span"
+              >Mobile Number: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <br />
+          <input type="tel" class="input mobile" name="mobile" placeholder="" />
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-lock"></i>
+            <span class="span"
+              >Password: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="password" class="input password" name="password" />
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-lock"></i>
+            <span class="span"
+              >Confirm Password: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="password" class="input conpassword" name="conpassword" />
+          <br />
+          <br />
         </form>
-        <button class="next_page">Next</button>
-     </fieldset>
+        <button class="next_page">
+          <i class="fa-solid fa-arrow-right"></i> Next
+        </button>
+      </fieldset>
 
-     <fieldset class="form_container_2 display">
-        <legend>Address</legend>
+      <fieldset class="form_container_2 display">
+        <legend>
+          <strong><i class="fa-solid fa-address-card"></i> Address </strong>
+        </legend>
         <form action="">
-            <div class="location_container">
+          <div class="location_container">
             <div class="pincode">
-                <label for=""><span class="span">Pincode: <span style="color: red;">*</span></span></label> <br>
-                <input type="number" class="pincode" name="pincode" required>
+              <label for="">
+                <i class="fa-solid fa-location-dot"></i>
+                <span class="span"
+                  >Pincode: <span style="color: red">*</span></span
+                ></label
+              >
+              <br />
+              <input type="number" class="pincode" name="pincode" required />
             </div>
             <div class="location">
-                <p class="location_name">Use my location</p>
+              <p class="location_name">
+                <i class="fa-solid fa-location-crosshairs"></i> Use my location
+              </p>
             </div>
-        </div> <br><br>
-        <label for=""><span class="span">State: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input conpassword" name="conpassword"> <br> <br>
-            <label for=""><span class="span">City: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input conpassword" name="conpassword"> <br> <br>
-            <label for=""><span class="span">House No,Building Name: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input conpassword" name="conpassword"> <br> <br>
-            <label for=""><span class="span">Road name,Area,Colony: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input conpassword" name="conpassword"> <br> <br>
-            <label for=""><span class="span">Add Nearby Famous Shop/Mall/Landmark: <span style="color: red;">*</span></span></label> <br>
-            <input type="text" class="input conpassword" name="conpassword"> <br> <br>
-            <button class="home address_btn">Home</button>
-            <button class="work address_btn">work</button>
+          </div>
+          <br /><br />
+          <label for="">
+            <i class="fa-solid fa-gopuram"></i>
+            <span class="span"
+              >State: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+
+          <select name="state" class="input state">
+            <option value="#">Select State</option>
+            <option value="tn" class="sd">Tamil Nadu</option>
+          </select>
+          <br />
+          <br />
+
+          <label for="">
+            <i class="fa-solid fa-city"></i>
+            <span class="span"
+              >City: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+
+          <select class="input state" name="city">
+            <option value="#">Select City</option>
+            <option value="Nilagiri">Nilagiri</option>
+            <option value="Tiruppur">Tiruppur</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Erode">Erode</option>
+            <option value="Namakkal">Namakkal</option>
+            <option value="Salem">Salem</option>
+          </select>
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-house"></i>
+            <span class="span"
+              >House No,Building Name: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="text" class="input house" name="house" required />
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-road"></i>
+            <span class="span"
+              >Road name,Area,Colony: <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="text" class="input road" name="road" required />
+          <br />
+          <br />
+          <label for="">
+            <i class="fa-solid fa-landmark"></i>
+            <span class="span"
+              >Add Nearby Famous Shop/Mall/Landmark:
+              <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <input type="text" class="input landmark" name="landmark" required />
+          <br />
+          <br />
+          <div class="btn">
+            <p class="address_type">Type of address</p>
+            <button class="home address_btn">
+              <i class="fa-solid fa-house"></i> Home
+            </button>
+            <button class="work address_btn">
+              <i class="fa-solid fa-building"></i> work
+            </button>
+          </div>
         </form>
-        <button class="next_page">Next</button>
-     </fieldset>
-     <!-- <h4 class="footer">Agro Mart</h4> -->
+        <button class="next_page next_page_2">Next</button>
+      </fieldset>
     </div>
-</body>
-<script src="/Registration/registration.js"></script>
+
+    <div class="id_display display">
+      <h1 class="Welcome">Welcome To Agro Mart</h1>
+      <p class="note">
+        <span class="span">
+          <i class="fa-solid fa-circle-exclamation"></i> Note:</span
+        >Do not share your ID with anyone.
+      </p>
+      <p class="id_quats">
+        <i class="fa-solid fa-id-card"></i> Your Permanent ID
+      </p>
+      <div class="box_id">
+        <p class="id_text">surya4343A</p>
+      </div>
+      <a href="/Mobile/html/home_page.html" class="start">Let's Start</a>
+    </div>
+  </body>
+  <script src="/Registration/registration.js"></script>
 </html>
