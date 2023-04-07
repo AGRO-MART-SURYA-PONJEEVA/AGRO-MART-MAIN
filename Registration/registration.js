@@ -89,6 +89,49 @@ let type = "";
 let b = 0;
 //addEventListener
 // page1
+const check=function(fullName,email,mobileNumberget)
+{
+  let a=0;
+  fullName=fullName.split(" ");
+  let firstName=fullName[0].toLowerCase();
+ alreadyUser.forEach((element)=>
+ {
+  let fullNameAll=element.fullName.split(" ");
+  let firstNameAll=fullNameAll[0].toLowerCase();
+  if(firstName===firstNameAll)
+  {
+    errorMessage1.textContent="Already a user or name has been taken, try another.";
+    errorMessage1.classList.remove("display");
+    a--;
+  }
+  else{
+    errorMessage1.classList.add("display");
+    a++;
+  }
+  if(email===element.email)
+  {
+    errorMessage2.textContent="Already a user or Email has been taken, try another.";
+    errorMessage2.classList.remove("display");
+    a--;
+  }
+  else{
+    errorMessage2.classList.add("display");
+    a++;
+  }
+  if(mobileNumberget===element.mobileNumber)
+  {
+    errorMessage3.textContent="Already a user or Mobile Number has been taken, try another.";
+    errorMessage3.classList.remove("display");
+    a--;
+  }
+  else{
+    errorMessage3.classList.add("display");
+    a++;
+  }
+ })
+ return a;
+}
+
 nextPage1.addEventListener("click", function (e) {
   let fullNameget = fullName.value;
   const emailget = email.value;
@@ -98,58 +141,14 @@ nextPage1.addEventListener("click", function (e) {
   let a = 0;
   userDataArray = [];
   if (fullNameget != "" || emailget != "" || mobileget != "") {
-    fullNameget = fullNameget.toLowerCase();
-    alreadyUser.forEach((element) => {
-      element = element.fullName.toLowerCase();
-      element = element.split(" ");
-      let fullNameSplit = fullNameget.split(" ");
-      if (element[0] === fullNameSplit[0]) {
-        a--;
-        errorMessage1.textContent =
-          "Already a user or name has been taken, try another.";
-        errorMessage1.classList.remove("display");
-      } else {
-        errorMessage1.classList.add("display");
-        a++;
-      }
-    });
-
-    if (emailget.includes("@") && emailget.includes(".com")) {
-      alreadyUser.forEach((element) => {
-        element = element.email;
-        if (element === emailget) {
-          a--;
-          errorMessage2.textContent =
-            "Already a user or Email has been taken, try another.";
-          errorMessage2.classList.remove("display");
-        } else {
-          errorMessage2.classList.add("display");
-          a++;
-        }
-      });
-    } else {
-      errorMessage2.textContent = "Please enter a valid email address.";
-      errorMessage2.classList.remove("display");
-      a--;
-    }
-    if (mobileget.length !== 10) {
-      errorMessage3.textContent = "Please enter a valid 10-digit phone number.";
-      errorMessage3.classList.remove("display");
-      a--;
-    } else {
-      alreadyUser.forEach((element) => {
-        element = element.mobileNumber;
-        if (element === mobileget) {
-          a--;
-          errorMessage3.textContent =
-            "Already a user or mobile number has been taken, try another.";
-          errorMessage3.classList.remove("display");
-        } else {
-          errorMessage3.classList.add("display");
-          a++;
-        }
-      });
-    }
+   if(alreadyUser.length===0)
+   {
+    a=3;
+   }
+   else
+   {
+    const a=check(fullNameget,emailget,mobileget);
+   }
     if (
       passwordget.length === 4 &&
       conpasswordget.length === 4 &&
@@ -172,7 +171,7 @@ nextPage1.addEventListener("click", function (e) {
     errorMessage3.classList.remove("display");
     errorMessage5.classList.remove("display");
     errorMessage6.classList.remove("display");
-    a == 0;
+    a=0;
   }
   if (a === 4) {
     userDataArray.push(fullNameget);
