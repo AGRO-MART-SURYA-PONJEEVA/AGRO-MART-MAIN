@@ -20,8 +20,11 @@ formdb.on("value", function (snapshot) {
     // console.log(element.val().FullName);
     // let name=element.val().FullName;
     // let mobile=element.val().FullName;
+    let lowername=element.val().FullName;
+    lowername=lowername.toLowerCase();
+    lowername=lowername.split(" ");
     const user = {
-      fullName: element.val().FullName,
+      fullName: lowername[0],
       mobileNumber: element.val().Mobile,
       email: element.val().Email,
     };
@@ -93,38 +96,39 @@ const check = function (fullName, email, mobileNumberget) {
   let a = 0;
   fullName = fullName.split(" ");
   let firstName = fullName[0].toLowerCase();
-  alreadyUser.forEach((element) => {
-    a = 0;
-    let fullNameAll = element.fullName.split(" ");
-    let firstNameAll = fullNameAll[0].toLowerCase();
-    if (firstName === firstNameAll) {
-      errorMessage1.textContent =
-        "Already a user or name has been taken, try another.";
-      errorMessage1.classList.remove("display");
-      a--;
-    } else {
-      errorMessage1.classList.add("display");
-      a++;
-    }
-    if (email === element.email) {
-      errorMessage2.textContent =
-        "Already a user or Email has been taken, try another.";
-      errorMessage2.classList.remove("display");
-      a--;
-    } else {
-      errorMessage2.classList.add("display");
-      a++;
-    }
-    if (mobileNumberget === element.mobileNumber) {
-      errorMessage3.textContent =
-        "Already a user or Mobile Number has been taken, try another.";
-      errorMessage3.classList.remove("display");
-      a--;
-    } else {
-      errorMessage3.classList.add("display");
-      a++;
-    }
-  });
+  const find1 = alreadyUser.find((mov) => mov?.fullName === firstName);
+  const find2 = alreadyUser.find((mov) => mov?.email === email);
+  const find3 = alreadyUser.find((mov) => mov?.mobileNumber === mobileNumberget);
+  if(find1===undefined)
+  {
+   a++;
+   errorMessage1.classList.add('display');
+  }
+  else{
+  errorMessage1.textContent="Name already have been taken,try another";
+  errorMessage1.classList.remove('display');
+  }
+  if(find2===undefined)
+  {
+    errorMessage2.classList.add('display');
+   a++;
+  }
+  else{
+  errorMessage2.textContent="Email already have been taken try another";
+  errorMessage1.classList.remove('display');
+}
+  
+  if(find3===undefined)
+  {
+    errorMessage3.classList.add('display');
+   a++;
+  }
+  else{
+  errorMessage3.textContent="Mobile Number already have been taken try another";
+  errorMessage3.classList.remove('display');
+  }
+  
+  
   return a;
 };
 
@@ -300,5 +304,6 @@ const userData = function () {
     AddressType: userDataArray[11],
     PermanentedId: userDataArray[12],
   });
+  
 };
 // ['RAJASURYA R', 'techmacos2020@gmail.com', '9840864118', '1111', '637215', 'tn', 'Nilagiri', '1', '1', '1', 'customer', 'home']
