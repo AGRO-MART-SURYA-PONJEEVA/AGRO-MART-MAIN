@@ -157,6 +157,7 @@ nextPage1.addEventListener("click", function (e) {
       errorMessage5.classList.add("display");
       errorMessage6.classList.add("display");
       a++;
+      console.log(a);
     } else {
       errorMessage5.textContent = "Passwords do not match. Please try again.";
       errorMessage6.textContent = "Passwords do not match. Please try again.";
@@ -171,9 +172,11 @@ nextPage1.addEventListener("click", function (e) {
     errorMessage3.classList.remove("display");
     errorMessage5.classList.remove("display");
     errorMessage6.classList.remove("display");
-    a=0;
+    // a=0;
   }
+ 
   if (a === 4) {
+    console.log(a);
     userDataArray.push(fullNameget);
     userDataArray.push(emailget);
     userDataArray.push(mobileget);
