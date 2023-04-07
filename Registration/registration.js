@@ -89,48 +89,44 @@ let type = "";
 let b = 0;
 //addEventListener
 // page1
-const check=function(fullName,email,mobileNumberget)
-{
-  let a=0;
-  fullName=fullName.split(" ");
-  let firstName=fullName[0].toLowerCase();
- alreadyUser.forEach((element)=>
- {
-  let fullNameAll=element.fullName.split(" ");
-  let firstNameAll=fullNameAll[0].toLowerCase();
-  if(firstName===firstNameAll)
-  {
-    errorMessage1.textContent="Already a user or name has been taken, try another.";
-    errorMessage1.classList.remove("display");
-    a--;
-  }
-  else{
-    errorMessage1.classList.add("display");
-    a++;
-  }
-  if(email===element.email)
-  {
-    errorMessage2.textContent="Already a user or Email has been taken, try another.";
-    errorMessage2.classList.remove("display");
-    a--;
-  }
-  else{
-    errorMessage2.classList.add("display");
-    a++;
-  }
-  if(mobileNumberget===element.mobileNumber)
-  {
-    errorMessage3.textContent="Already a user or Mobile Number has been taken, try another.";
-    errorMessage3.classList.remove("display");
-    a--;
-  }
-  else{
-    errorMessage3.classList.add("display");
-    a++;
-  }
- })
- return a;
-}
+const check = function (fullName, email, mobileNumberget) {
+  let a = 0;
+  fullName = fullName.split(" ");
+  let firstName = fullName[0].toLowerCase();
+  alreadyUser.forEach((element) => {
+    a = 0;
+    let fullNameAll = element.fullName.split(" ");
+    let firstNameAll = fullNameAll[0].toLowerCase();
+    if (firstName === firstNameAll) {
+      errorMessage1.textContent =
+        "Already a user or name has been taken, try another.";
+      errorMessage1.classList.remove("display");
+      a--;
+    } else {
+      errorMessage1.classList.add("display");
+      a++;
+    }
+    if (email === element.email) {
+      errorMessage2.textContent =
+        "Already a user or Email has been taken, try another.";
+      errorMessage2.classList.remove("display");
+      a--;
+    } else {
+      errorMessage2.classList.add("display");
+      a++;
+    }
+    if (mobileNumberget === element.mobileNumber) {
+      errorMessage3.textContent =
+        "Already a user or Mobile Number has been taken, try another.";
+      errorMessage3.classList.remove("display");
+      a--;
+    } else {
+      errorMessage3.classList.add("display");
+      a++;
+    }
+  });
+  return a;
+};
 
 nextPage1.addEventListener("click", function (e) {
   let fullNameget = fullName.value;
@@ -141,14 +137,22 @@ nextPage1.addEventListener("click", function (e) {
   let a = 0;
   userDataArray = [];
   if (fullNameget != "" || emailget != "" || mobileget != "") {
-   if(alreadyUser.length===0)
-   {
-    a=3;
-   }
-   else
-   {
-    const a=check(fullNameget,emailget,mobileget);
-   }
+    if (alreadyUser.length === 0) {
+      a = 3;
+    } else {
+      if (
+        emailget.includes("@") &&
+        emailget.includes(".com") &&
+        mobileget.length === 10
+      ) {
+        a = check(fullNameget, emailget, mobileget);
+      } else {
+        errorMessage2.textContent = "Email Not Valid";
+        errorMessage3.textContent = "Mobile Number Not Valid";
+        errorMessage2.classList.remove("display");
+        errorMessage3.classList.remove("display");
+      }
+    }
     if (
       passwordget.length === 4 &&
       conpasswordget.length === 4 &&
@@ -157,7 +161,6 @@ nextPage1.addEventListener("click", function (e) {
       errorMessage5.classList.add("display");
       errorMessage6.classList.add("display");
       a++;
-      console.log(a);
     } else {
       errorMessage5.textContent = "Passwords do not match. Please try again.";
       errorMessage6.textContent = "Passwords do not match. Please try again.";
@@ -174,9 +177,8 @@ nextPage1.addEventListener("click", function (e) {
     errorMessage6.classList.remove("display");
     // a=0;
   }
- 
+
   if (a === 4) {
-    console.log(a);
     userDataArray.push(fullNameget);
     userDataArray.push(emailget);
     userDataArray.push(mobileget);
@@ -254,10 +256,8 @@ nextPage2.addEventListener("click", function (e) {
     page2.classList.add("display");
     title.textContent = "congratulations";
     note.textContent = "";
+
     let firstName = userDataArray[0].split(" ");
-    const fullId =
-      firstName[0] + "-" + userDataArray[3] + "-" + userDataArray[10].charAt(0);
-    userDataArray.push(fullId);
     idText.textContent =
       firstName[0] + "-" + userDataArray[3] + "-" + userDataArray[10].charAt(0);
     page3.classList.remove("display");
@@ -279,6 +279,10 @@ const userData = function () {
   }
   userDataArray.push(role);
   userDataArray.push(type);
+  let firstName = userDataArray[0].split(" ");
+  const fullId =
+    firstName[0] + "-" + userDataArray[3] + "-" + userDataArray[10].charAt(0);
+  userDataArray.push(fullId);
   console.log(userDataArray);
   var newContactForm = formdb.push();
   newContactForm.set({
