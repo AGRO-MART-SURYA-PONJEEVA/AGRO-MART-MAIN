@@ -301,5 +301,4 @@ const userData = function () {
     PermanentedId: userDataArray[12],
   });
 };
-
 // ['RAJASURYA R', 'techmacos2020@gmail.com', '9840864118', '1111', '637215', 'tn', 'Nilagiri', '1', '1', '1', 'customer', 'home']
