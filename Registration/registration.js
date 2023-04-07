@@ -17,9 +17,6 @@ var formdb = firebase.database().ref("USER DATABASE");
 let alreadyUser = [];
 formdb.on("value", function (snapshot) {
   snapshot.forEach(function (element) {
-    // console.log(element.val().FullName);
-    // let name=element.val().FullName;
-    // let mobile=element.val().FullName;
     let lowername=element.val().FullName;
     lowername=lowername.toLowerCase();
     lowername=lowername.split(" ");
@@ -99,6 +96,7 @@ const check = function (fullName, email, mobileNumberget) {
   const find1 = alreadyUser.find((mov) => mov?.fullName === firstName);
   const find2 = alreadyUser.find((mov) => mov?.email === email);
   const find3 = alreadyUser.find((mov) => mov?.mobileNumber === mobileNumberget);
+  
   if(find1===undefined)
   {
    a++;
@@ -115,7 +113,7 @@ const check = function (fullName, email, mobileNumberget) {
   }
   else{
   errorMessage2.textContent="Email already have been taken try another";
-  errorMessage1.classList.remove('display');
+  errorMessage2.classList.remove('display');
 }
   
   if(find3===undefined)
