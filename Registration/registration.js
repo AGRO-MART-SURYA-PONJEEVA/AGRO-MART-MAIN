@@ -9,26 +9,26 @@ const firebaseConfig = {
   projectId: "agro-mart-2f9dd",
   storageBucket: "agro-mart-2f9dd.appspot.com",
   messagingSenderId: "986382838818",
-  appId: "1:986382838818:web:dff4d0cb805b5cc39cae7b"
+  appId: "1:986382838818:web:dff4d0cb805b5cc39cae7b",
 };
 firebase.initializeApp(firebaseConfig);
 var formdb = firebase.database().ref("USER DATABASE");
 
-let alreadyUser=[];
+let alreadyUser = [];
 formdb.on("value", function (snapshot) {
   snapshot.forEach(function (element) {
     // console.log(element.val().FullName);
-    let name=element.val().FullName;
+    // let name=element.val().FullName;
+    // let mobile=element.val().FullName;
+    const user = {
+      fullName: element.val().FullName,
+      mobileNumber: element.val().Mobile,
+      email: element.val().Email,
+    };
     // console.log(name);
-    alreadyUser.push(name);
+    alreadyUser.push(user);
   });
 });
-
-
-
-
-
-
 
 const phoneInputField = document.querySelector(".mobile");
 const phoneInput = window.intlTelInput(phoneInputField, {
@@ -50,8 +50,9 @@ const mobile = document.querySelector(".mobile");
 const radio = document.querySelector(".radio");
 const password = document.querySelector(".password");
 const conPassword = document.querySelector(".conpassword");
-const title=document.querySelector('.header_title');
-
+const title = document.querySelector(".header_title");
+const note = document.querySelector(".note");
+const idText = document.querySelector(".id_text");
 // page 2
 const pincode = document.querySelector(".pincode");
 const state = document.querySelector(".state");
@@ -65,8 +66,8 @@ const nextPage1 = document.querySelector(".next_page");
 const nextPage2 = document.querySelector(".next_page_2");
 const ratio1 = document.querySelector(".farmer");
 const ratio2 = document.querySelector(".customer");
-const work=document.querySelector('.work');
-const home=document.querySelector('.home');
+const work = document.querySelector(".work");
+const home = document.querySelector(".home");
 //error message
 const errorMessage1 = document.querySelector(".error_message_name");
 const errorMessage2 = document.querySelector(".error_message_email");
@@ -84,7 +85,7 @@ const errorMessage12 = document.querySelector(".error_message_landmark");
 // global Input
 let userDataArray = [];
 let role = "";
-let type="";
+let type = "";
 let b = 0;
 //addEventListener
 // page1
@@ -95,29 +96,37 @@ nextPage1.addEventListener("click", function (e) {
   const passwordget = password.value;
   const conpasswordget = conPassword.value;
   let a = 0;
-// console.log(alreadyUser);
   userDataArray = [];
   if (fullNameget != "" || emailget != "" || mobileget != "") {
-      fullNameget=fullNameget.toLowerCase();
-        alreadyUser.forEach((element)=>{
-          element=element.toLowerCase();
-          if(element===fullNameget)
-          {
-            a--;
-            console.log("hel");
-            errorMessage1.textContent="Already a user or name has been taken, try another."
-            errorMessage1.classList.remove("display");
-          }
-          else{
-            errorMessage1.classList.add("display");
-            a++;
-          }
-        })
-     
-    
+    fullNameget = fullNameget.toLowerCase();
+    alreadyUser.forEach((element) => {
+      element = element.fullName.toLowerCase();
+      element = element.split(" ");
+      let fullNameSplit = fullNameget.split(" ");
+      if (element[0] === fullNameSplit[0]) {
+        a--;
+        errorMessage1.textContent =
+          "Already a user or name has been taken, try another.";
+        errorMessage1.classList.remove("display");
+      } else {
+        errorMessage1.classList.add("display");
+        a++;
+      }
+    });
+
     if (emailget.includes("@") && emailget.includes(".com")) {
-      a++;
-      errorMessage2.classList.add("display");
+      alreadyUser.forEach((element) => {
+        element = element.email;
+        if (element === emailget) {
+          a--;
+          errorMessage2.textContent =
+            "Already a user or Email has been taken, try another.";
+          errorMessage2.classList.remove("display");
+        } else {
+          errorMessage2.classList.add("display");
+          a++;
+        }
+      });
     } else {
       errorMessage2.textContent = "Please enter a valid email address.";
       errorMessage2.classList.remove("display");
@@ -128,8 +137,18 @@ nextPage1.addEventListener("click", function (e) {
       errorMessage3.classList.remove("display");
       a--;
     } else {
-      a++;
-      errorMessage3.classList.add("display");
+      alreadyUser.forEach((element) => {
+        element = element.mobileNumber;
+        if (element === mobileget) {
+          a--;
+          errorMessage3.textContent =
+            "Already a user or mobile number has been taken, try another.";
+          errorMessage3.classList.remove("display");
+        } else {
+          errorMessage3.classList.add("display");
+          a++;
+        }
+      });
     }
     if (
       passwordget.length === 4 &&
@@ -165,18 +184,18 @@ nextPage1.addEventListener("click", function (e) {
   }
 });
 ratio1.addEventListener("click", function () {
-  role = "farmer";
+  role = "Farmer";
 });
 ratio2.addEventListener("click", function () {
-  role = "customer";
+  role = "Customer";
 });
 
 //page_2//
 nextPage2.addEventListener("click", function (e) {
-  let a=0;
+  let a = 0;
   const pincodeget = pincode.value;
   const stateget = state.value;
-  const cityget=city.value;
+  const cityget = city.value;
   const houseget = house.value;
   const roadget = road.value;
   const landmarkget = landmark.value;
@@ -194,15 +213,13 @@ nextPage2.addEventListener("click", function (e) {
     errorMessage8.classList.add("display");
     a++;
   }
-  if(cityget==="")
-{
-  errorMessage9.classList.remove("display");
-  a--;
-}
-else{
-  errorMessage9.classList.add("display");
-  a++;
-}
+  if (cityget === "") {
+    errorMessage9.classList.remove("display");
+    a--;
+  } else {
+    errorMessage9.classList.add("display");
+    a++;
+  }
   if (houseget === "") {
     errorMessage10.classList.remove("display");
     a--;
@@ -224,8 +241,7 @@ else{
     errorMessage12.classList.add("display");
     a++;
   }
-  if(a===6)
-  {
+  if (a === 6) {
     userDataArray.push(pincodeget);
     userDataArray.push(stateget);
     userDataArray.push(cityget);
@@ -234,38 +250,50 @@ else{
     userDataArray.push(landmarkget);
     userData();
     page2.classList.add("display");
+    title.textContent = "congratulations";
+    note.textContent = "";
+    let firstName = userDataArray[0].split(" ");
+    const fullId =
+      firstName[0] + "-" + userDataArray[3] + "-" + userDataArray[10].charAt(0);
+    userDataArray.push(fullId);
+    idText.textContent =
+      firstName[0] + "-" + userDataArray[3] + "-" + userDataArray[10].charAt(0);
     page3.classList.remove("display");
-    title.textContent="congratulations"
   }
 });
-work.addEventListener('click',function(e)
-{
+work.addEventListener("click", function (e) {
   e.preventDefault();
-  type="work";
-})
-home.addEventListener('click',function()
-{
-  type="home";
-})
+  type = "work";
+});
+home.addEventListener("click", function () {
+  type = "home";
+});
 const userData = function () {
+  if (role === "") {
+    role = "NULL";
+  }
+  if (type === "") {
+    type = "NULL";
+  }
   userDataArray.push(role);
   userDataArray.push(type);
+  console.log(userDataArray);
   var newContactForm = formdb.push();
   newContactForm.set({
-   FullName:userDataArray[0],
-   Email:userDataArray[1],
-   Mobile:userDataArray[2],
-   password:userDataArray[3],
-   Pincode:userDataArray[4],
-   State:"Tamil Nadu",
-   City:userDataArray[6],
-   House:userDataArray[7],
-   Road:userDataArray[8],
-   Landmark:userDataArray[9],
-   Roll:userDataArray[10],
-   AddressType:userDataArray[11],
+    FullName: userDataArray[0],
+    Email: userDataArray[1],
+    Mobile: userDataArray[2],
+    password: userDataArray[3],
+    Pincode: userDataArray[4],
+    State: "Tamil Nadu",
+    City: userDataArray[6],
+    House: userDataArray[7],
+    Road: userDataArray[8],
+    Landmark: userDataArray[9],
+    Roll: userDataArray[10],
+    AddressType: userDataArray[11],
+    PermanentedId: userDataArray[12],
   });
 };
-
 
 // ['RAJASURYA R', 'techmacos2020@gmail.com', '9840864118', '1111', '637215', 'tn', 'Nilagiri', '1', '1', '1', 'customer', 'home']

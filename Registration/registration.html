@@ -19,8 +19,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"
+    ></script>
   </head>
   <body>
     <div class="header">
@@ -45,9 +51,17 @@
             ></label
           >
           <br />
-          <input type="text" class="input fullname" name="fullname" maxlength="15"/>
+          <input
+            type="text"
+            class="input fullname"
+            name="fullname"
+            maxlength="15"
+          />
           <br />
-          <p class="error_message error_message_name display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message error_message_name display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <label for="">
             <i class="fa-solid fa-envelope"></i>
@@ -55,7 +69,10 @@
           >
           <br />
           <input type="email" class="input email" name="email" /> <br />
-          <p class="error_message error_message_email display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message error_message_email display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <label for="">
             <i class="fa-solid fa-mobile"></i>
@@ -65,18 +82,45 @@
           >
           <br />
           <br />
-          <input type="tel" class="input mobile" name="mobile" placeholder="" maxlength="10"/>
+          <input
+            type="tel"
+            class="input mobile"
+            name="mobile"
+            placeholder=""
+            maxlength="10"
+          />
           <br />
-          <p class="error_message error_message_mobile display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message error_message_mobile display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
-          <label for=""><span class="span"
-            > <i class="fa-solid fa-person"></i> Choose your role: <span style="color: red">*</span></span
-          ></label> <br> <br>
-          
-          <input type="radio" class="farmer" value="farmer" name="radio" ><span class="span"> Farmer </span>    
-          <input type="radio" class="customer" value="customer" name="radio"><span class="span"> Customer </span><br> <br>
-      
-        <p class="error_message error_message_radio display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <label for=""
+            ><span class="span">
+              <i class="fa-solid fa-person"></i> Choose your role:
+              <span style="color: red">*</span></span
+            ></label
+          >
+          <br />
+          <br />
+
+          <input type="radio" class="farmer" value="farmer" name="radio" /><span
+            class="span"
+          >
+            Farmer
+          </span>
+          <input
+            type="radio"
+            class="customer"
+            value="customer"
+            name="radio"
+          /><span class="span"> Customer </span><br />
+          <br />
+
+          <p class="error_message error_message_radio display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <label for="">
             <i class="fa-solid fa-lock"></i>
             <span class="span"
@@ -84,8 +128,16 @@
             ></label
           >
           <br />
-          <input type="password" class="input password" name="password" maxlength="4"/>
-          <p class="error_message error_message_password display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <input
+            type="password"
+            class="input password"
+            name="password"
+            maxlength="4"
+          />
+          <p class="error_message error_message_password display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <br />
           <label for="">
@@ -95,8 +147,16 @@
             ></label
           >
           <br />
-          <input type="password" class="input conpassword" name="conpassword" maxlength="4"/>
-          <p class="error_message error_message_conpassword display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <input
+            type="password"
+            class="input conpassword"
+            name="conpassword"
+            maxlength="4"
+          />
+          <p class="error_message error_message_conpassword display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <br />
         </form>
@@ -104,9 +164,8 @@
           <i class="fa-solid fa-arrow-right"></i> Next
         </button>
       </fieldset>
-<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
       <fieldset class="form_container_2 display">
-        
         <legend>
           <strong><i class="fa-solid fa-address-card"></i> Address </strong>
         </legend>
@@ -120,8 +179,11 @@
                 ></label
               >
               <br />
-              <input type="number" class="pincode" maxlength="6"/>
-              <p class="error_message_1 error_message_pincode display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+              <input type="number" class="pincode" maxlength="6" />
+              <p class="error_message_1 error_message_pincode display">
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This
+                field is required. Please enter a value.
+              </p>
             </div>
             <div class="location">
               <p class="location_name">
@@ -143,7 +205,10 @@
             <option value="tn" class="sd">Tamil Nadu</option>
           </select>
           <br />
-          <p class="error_message_1 error_message_state display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message_1 error_message_state display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
 
           <label for="">
@@ -164,7 +229,10 @@
             <option value="Salem">Salem</option>
           </select>
           <br />
-          <p class="error_message_1 error_message_city display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message_1 error_message_city display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <label for="">
             <i class="fa-solid fa-house"></i>
@@ -175,7 +243,10 @@
           <br />
           <input type="text" class="input house" name="house" required />
           <br />
-          <p class="error_message_1 error_message_house display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message_1 error_message_house display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <label for="">
             <i class="fa-solid fa-road"></i>
@@ -186,7 +257,10 @@
           <br />
           <input type="text" class="input road" name="road" required />
           <br />
-          <p class="error_message_1 error_message_road display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message_1 error_message_road display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <label for="">
             <i class="fa-solid fa-landmark"></i>
@@ -198,7 +272,10 @@
           <br />
           <input type="text" class="input landmark" name="landmark" required />
           <br />
-          <p class="error_message_1 error_message_landmark display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+          <p class="error_message_1 error_message_landmark display">
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+            is required. Please enter a value.
+          </p>
           <br />
           <p class="address_type">Type of address</p>
           <div class="btn">
@@ -208,7 +285,10 @@
             <p class="work address_btn">
               <i class="fa-solid fa-building"></i> work
             </p>
-            <p class="error_message_1 error_message_name display"> <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field is required. Please enter a value.</p>
+            <p class="error_message_1 error_message_name display">
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i> This field
+              is required. Please enter a value.
+            </p>
           </div>
         </form>
         <button class="next_page_2 next_page">Next</button>
