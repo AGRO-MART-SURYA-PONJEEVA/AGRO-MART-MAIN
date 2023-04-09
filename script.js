@@ -1,34 +1,77 @@
 "use strict";
-const computer=document.querySelector('.display1');
-const mobile=document.querySelector('.display2');
-let myMediaQuery = window.matchMedia('(min-width: 915px)');
+const computer = document.querySelector(".display1");
+const mobile = document.querySelector(".display2");
+let myMediaQuery = window.matchMedia("(min-width: 915px)");
 function widthChangeCallback(myMediaQuery) {
-  if(myMediaQuery.matches) {
+  if (myMediaQuery.matches) {
     mobile.classList.add("display");
     computer.classList.remove("display");
     setTimeout(() => {
       // window.location.href = "/computer/html/startPageC.html";
     }, 100);
-   } else {
+  } else {
     mobile.classList.remove("display");
     computer.classList.add("display");
     setTimeout(() => {
       // window.location.href = "/Mobile/html/startPageM.html";
     }, 10000);
-   }
+  }
 }
-myMediaQuery.addEventListener('change', widthChangeCallback);
+myMediaQuery.addEventListener("change", widthChangeCallback);
 widthChangeCallback(myMediaQuery);
-const imgSlide=document.querySelector('.img_slide');
-let i=1;
-const tick=function()
-{
-  if(i!=5){
- imgSlide.src=`/image/${i++}.webp`;
-  }
-  else
-  {
-    i=1;
-  }
-}
+const slider = document.querySelector(".slider");
+const images = slider.querySelectorAll("img");
+
+// Get the previous and next buttons
+const prevBtn = slider.querySelector(".prev");
+const nextBtn = slider.querySelector(".next");
+
+// Set the index of the active image
+let activeIndex = 0;
+
+// Set the active class on the first image
+images[activeIndex].classList.add("active");
+const tick = function () {
+  // Remove the active class from the current image
+  images[activeIndex].classList.remove("active");
+  // Increment the active index by 1
+  activeIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
+  // Add the active class to the new image
+  images[activeIndex].classList.add("active");
+};
 setInterval(tick, 3000);
+
+// // Get the slider container and images
+
+// // Handle click events on the previous button
+// prevBtn.addEventListener('click', () => {
+//   // Remove the active class from the current image
+//   images[activeIndex].classList.remove('active');
+//   // Decrement the active index by 1
+//   activeIndex = (activeIndex === 0) ? images.length - 1 : activeIndex - 1;
+//   // Add the active class to the new image
+//   images[activeIndex].classList.add('active');
+// });
+
+// // Handle click events on the next button
+// nextBtn.addEventListener('click', () => {
+//   // Remove the active class from the current image
+//   images[activeIndex].classList.remove('active');
+//   // Increment the active index by 1
+//   activeIndex = (activeIndex === images.length - 1) ? 0 : activeIndex + 1;
+//   // Add the active class to the new image
+//   images[activeIndex].classList.add('active');
+// });
+const loading=document.querySelector('.loading');
+const btn=document.querySelector('.btn');
+const start=document.querySelector('.start');
+setTimeout(() => {
+
+  loading.classList.add("display");
+  btn.classList.remove("display");
+  // window.location.href = "/Mobile/html/startPageM.html";
+}, 8000);
+start.addEventListener('click',function()
+{
+  window.location.href = "/Mobile/html/startPageM.html";
+})
